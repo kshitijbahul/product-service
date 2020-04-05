@@ -1,0 +1,14 @@
+server:
+  port: 5002
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: "http://localhost:7050/eureka"
+  instances:
+    leaseRenewalIntervalInSeconds: 5
