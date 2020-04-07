@@ -12,3 +12,19 @@ eureka:
       defaultZone: "http://localhost:7050/eureka"
   instances:
     leaseRenewalIntervalInSeconds: 5
+spring:
+  jpa:
+    show-sql: 'true'
+  h2:
+    console:
+      enabled: 'true'
+      path: '/h2-console'
+
+#logging:
+#  level:
+#    org:
+#      hibernate:
+#        tool:
+#          hbm2ddl: true
+#        sql: 'DEBUG'
+#

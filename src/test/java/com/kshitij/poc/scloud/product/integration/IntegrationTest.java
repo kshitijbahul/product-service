@@ -1,7 +1,7 @@
 package com.kshitij.poc.scloud.product.integration;
 
 import com.kshitij.pocs.scloud.product.Application;
-import com.kshitij.pocs.scloud.product.model.Product;
+import com.kshitij.pocs.scloud.product.entity.Product;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Before;
 import org.junit.Test;

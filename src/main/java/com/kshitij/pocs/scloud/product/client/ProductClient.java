@@ -1,6 +1,6 @@
 package com.kshitij.pocs.scloud.product.client;
 
-import com.kshitij.pocs.scloud.product.model.Product;
+import com.kshitij.pocs.scloud.product.entity.Product;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
