@@ -18,17 +18,21 @@ public class ProductService {
         this.productRepository=productRepository;
     }
 
-    public Product getProductById(Long id) {
+    public Product getProductById(String id) {
         return this.productRepository.findById(id).orElseThrow(ProductNotFoundException::new);
-        //return null;
     }
     public Iterable<Product> getAllProducts(){
         return this.productRepository.findAll();
     }
-    public void createProduct(Product product){
-        this.productRepository.save(product);
+    public Product createProduct(Product product){
+        return this.productRepository.save(product);
     }
     public List<Product> getProductByCategory(Long categoryId){
         return this.productRepository.getProductByCategory(categoryId);
+    }
+
+    public Product updateProduct(String id, Product product) {
+        //Product existingProd=this.productRepository.findById(id);
+        return this.productRepository.save(product);
     }
 }

@@ -31,10 +31,10 @@ public class ProductControllerTest {
     @Test
     public void getProduct_shouldGetProduct() throws Exception {
         log.info("Checking the product");
-        when(productService.getProductById(1L)).thenReturn(new Product(1L,"New Product",2L));
+        when(productService.getProductById("1")).thenReturn(new Product("1","New Product",2L));
         mvc.perform(
                 MockMvcRequestBuilders.get("/product/1").accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk()).andExpect(jsonPath("id").isNumber());
+                .andExpect(status().isOk()).andExpect(jsonPath("id").isString());
     }
 
 }

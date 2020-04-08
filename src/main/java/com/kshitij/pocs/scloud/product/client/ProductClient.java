@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Arrays;
+import java.util.List;
+
 @RestController
 @Slf4j
 public class ProductClient {
@@ -19,5 +22,10 @@ public class ProductClient {
     ResponseEntity<Product> getProduct(@PathVariable("id") Long id){
         log.info("Entered the get Product Service");
         return restTemplate.getForEntity("http://PRODUCT-SERVICE"+"/product/1",Product.class);
+    }
+    @GetMapping("/client/progucts")
+    ResponseEntity<Product[]> getAllProducts(){
+        log.info("Came into the Getter of client services");
+        return restTemplate.getForEntity("http://PRODUCT-SERVICE/products", Product[].class);
     }
 }
