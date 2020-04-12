@@ -28,7 +28,7 @@ public class ProductService {
     }
     public Product createProduct(Product product){
         Product createdProduct = this.productRepository.save(product);
-        this.messageProducerService.sendMessage(product,Boolean.FALSE,"product.update");
+        this.messageProducerService.sendMessage(product,Boolean.FALSE,"product.update.created");
         return createdProduct;
     }
     public List<Product> getProductByCategory(Long categoryId){
@@ -38,7 +38,7 @@ public class ProductService {
     public Product updateProduct(String id, Product product) {
         //Product existingProd=this.productRepository.findById(id);
         Product updatedProduct =this.productRepository.save(product);
-        this.messageProducerService.sendMessage(updatedProduct,Boolean.FALSE,"product.update");
+        this.messageProducerService.sendMessage(updatedProduct,Boolean.FALSE,"product.update.updated");
         return updatedProduct;
     }
 }
