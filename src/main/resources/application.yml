@@ -1,5 +1,5 @@
 server:
-  port: 5001
+  port: 5002
 
 management:
   endpoints:
@@ -18,8 +18,10 @@ spring:
       database: 'masterdb'
   jpa:
     show-sql: 'true'
-
-#logging:
+  rabbitmq:
+    listener:
+      simple:
+        default-requeue-rejected=: false
 #  level:
 #    org:
 #      hibernate:

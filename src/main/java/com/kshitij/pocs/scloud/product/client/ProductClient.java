@@ -9,23 +9,20 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Arrays;
-import java.util.List;
-
-@RestController
+//@RestController
 @Slf4j
 public class ProductClient {
 
-    @Autowired
+    /*@Autowired
     private RestTemplate restTemplate;
     @GetMapping("/client/product/{id}")
     ResponseEntity<Product> getProduct(@PathVariable("id") Long id){
         log.info("Entered the get Product Service");
-        return restTemplate.getForEntity("http://PRODUCT-SERVICE"+"/product/1",Product.class);
+        return restTemplate.getForEntity("http://PRODUCT-SEARCH-SERVICE"+"/product/1",Product.class);
     }
-    @GetMapping("/client/progucts")
+    @GetMapping("/client/products")
     ResponseEntity<Product[]> getAllProducts(){
         log.info("Came into the Getter of client services");
-        return restTemplate.getForEntity("http://PRODUCT-SERVICE/products", Product[].class);
-    }
+        return restTemplate.getForEntity("http://PRODUCT-SEARCH-SERVICE/products", Product[].class);
+    }*/
 }
