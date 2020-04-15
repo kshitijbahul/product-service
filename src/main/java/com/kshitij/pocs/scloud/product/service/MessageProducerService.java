@@ -1,6 +1,5 @@
 package com.kshitij.pocs.scloud.product.service;
 
-import com.kshitij.pocs.scloud.product.Application;
 import com.kshitij.pocs.scloud.product.entity.Product;
 import com.kshitij.pocs.scloud.product.message.ProductUpdateMessage;
 import lombok.extern.slf4j.Slf4j;

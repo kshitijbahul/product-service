@@ -12,3 +12,5 @@ public class ProductUpdateMessage implements Serializable {
     Product product;
     Boolean isDeleted=Boolean.FALSE;
 }
+
+

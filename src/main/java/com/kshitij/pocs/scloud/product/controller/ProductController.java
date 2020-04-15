@@ -22,7 +22,7 @@ public class ProductController {
     }
 
 
-    /*@GetMapping("/product/{id}")
+    @GetMapping("/product/{id}")
     ResponseEntity getProduct(@PathVariable("id") String id){
         return ResponseEntity.status(HttpStatus.OK).body(productService.getProductById(id));
     }
@@ -38,13 +38,17 @@ public class ProductController {
     @ExceptionHandler(ProductNotFoundException.class)
     ResponseEntity<?> productNotFound(){
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Product Not found");
-    }*/
+    }
     @PostMapping("/product")
     ResponseEntity<Product> createProduct(@RequestBody Product product){
         return ResponseEntity.ok(this.productService.createProduct(product));
     }
-    @PutMapping("/product/{}")
+    @PutMapping("/product/{id}")
     ResponseEntity<Product> updateProduct(@PathVariable String id,@RequestBody Product product){
         return ResponseEntity.ok(this.productService.updateProduct(id,product));
+    }
+    @DeleteMapping("product/{id}")
+    ResponseEntity<Product> deleteProduct(@PathVariable("id") String id){
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(this.productService.deleteProduct(id));
     }
 }

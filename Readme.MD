@@ -8,4 +8,12 @@ For MongoDB
 
 For ElasticSearch
 
-`docker run -d -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.8.6` 
+`docker run -d -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.8.6`
+
+For ConfigServer
+
+`docker run -d -p 7060:7060 kshitijbahul/config-server`
+
+For Eureka Server 
+
+`docker run -d -p 7050:7050 kshitijbahul/eureka-server` 

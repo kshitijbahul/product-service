@@ -36,9 +36,17 @@ public class ProductService {
     }
 
     public Product updateProduct(String id, Product product) {
-        //Product existingProd=this.productRepository.findById(id);
-        Product updatedProduct =this.productRepository.save(product);
+        Product existingProd=this.productRepository.findById(id).orElseThrow(ProductNotFoundException::new);
+        existingProd.setCategory(product.getCategory());
+        existingProd.setName(product.getName());
+        Product updatedProduct =this.productRepository.save(existingProd);
         this.messageProducerService.sendMessage(updatedProduct,Boolean.FALSE,"product.update.updated");
         return updatedProduct;
+    }
+    public Product deleteProduct(String id){
+        Product foundProduct = this.productRepository.findById(id).orElseThrow(ProductNotFoundException::new);
+        this.productRepository.delete(foundProduct);
+        this.messageProducerService.sendMessage(foundProduct,Boolean.TRUE,"product.update.deleted");
+        return foundProduct;
     }
 }
